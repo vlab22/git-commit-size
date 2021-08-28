@@ -4,6 +4,8 @@ A simple script to show the commits' size in Mb, useful to identify large commit
 
 Based on the example on: [https://confluence.atlassian.com/fishkb/determine-the-size-of-each-git-commit-292651328.html](https://confluence.atlassian.com/fishkb/determine-the-size-of-each-git-commit-292651328.html)
 
+The code with minor modifications:
+
 ```perl
 #!/usr/bin/perl
 foreach my $rev (`git rev-list --all --pretty=oneline`) {
@@ -20,9 +22,11 @@ foreach my $rev (`git rev-list --all --pretty=oneline`) {
   }
   my $revn = substr($rev, 0, 40);
   if ($tot > 1000000) {
-	$mb_tot = $tot / 1024 / 1024;
-	$mb_tot_str = sprintf('%.2f', $mb_tot);
+    $mb_tot = $tot / 1024 / 1024;
+    $mb_tot_str = sprintf('%.2f', $mb_tot);
     print "$mb_tot_str Mb $rev_desc $revn " . `git show --pretty="format:" --name-only $revn | wc -l`  ;
   }
 }
 ```
+
+Put this file in the "PATH", in Windows, a good folder could be inside the Git\\cmd folder, for example: **C:\\Program Files\\Git\\cmd\\**
