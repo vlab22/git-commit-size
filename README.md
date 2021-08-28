@@ -31,6 +31,6 @@ foreach my $rev (`git rev-list --all --pretty=oneline`) {
 
 Put this file in the "PATH", in Windows, a good folder could be the Git\\cmd folder (**C:\\Program Files\\Git\\cmd\\),** if it is in the PATH
 
-Run from the **Git Bash** command prompt.
+Run from the **Git Bash** command prompt in a repository folder.
 
 ![](https://user-images.githubusercontent.com/1412924/131231549-5296d78b-3938-40ee-9789-fb640c82c348.png)
