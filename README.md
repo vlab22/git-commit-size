@@ -1,4 +1,4 @@
-# commit-size
+# git-commit-size
 
 A simple script to show the commits' size in Mb, useful to identify large commits that size up a git repository.
 
