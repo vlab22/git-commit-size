@@ -12,7 +12,9 @@ foreach my $rev (`git rev-list --all --pretty=oneline`) {
     $tot += int($size);
   }
   my $revn = substr($rev, 0, 40);
-  if ($tot > 1000000) {
+  
+  # 1 byte, change to 1000 for example, to show only commits greater than 1Mb
+  if ($tot > 1) {
 	$mb_tot = $tot / 1024 / 1024;
 	$mb_tot_str = sprintf('%.2f', $mb_tot);
     print "$mb_tot_str Mb $rev_desc $revn " . `git show --pretty="format:" --name-only $revn | wc -l`  ;
